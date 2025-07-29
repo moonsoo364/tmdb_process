@@ -1,10 +1,10 @@
-import tmdb from "./axios.js";
-export const movie = "movie show";
+import tmdb from './axios.js';
+export const movie = 'movie show';
 let page = 1;
 export const fetchTv = async () => {
   try {
-      const res = await tmdb.get('discover/tv', {
-      params:{
+    const res = await tmdb.get('discover/tv', {
+      params: {
         with_keywords: 180547,
         sort_by: 'first_air_date.desc',
         page: page++,
@@ -12,8 +12,9 @@ export const fetchTv = async () => {
         'first_air_date.lte': '2025-07-28'
       }
     });
-
+    console.log(res.data.results);
+    return res.data;
   } catch (e) {
-  console.log(e);
-}
-}
+    console.log(e);
+  }
+};
