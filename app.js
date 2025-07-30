@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3000;
 // middleware
 middleware.setupLogger(app);
 middleware.setupRoutes(app);
+middleware.setupBodyParser(app);
+middleware.setupResponseFormat(app);
 
 app.use('/', routes);
 app.listen(PORT, () => {

@@ -14,8 +14,9 @@ export const insertTvShows = async () => {
   return { count, total };
 };
 
-export const deleteAllTvShows = async () => {
+export const deleteAllTvShow = async () => {
   await connectToDB();
-  await clearTvShowCollection();
-  disconnect();
+  const deletedCount = await clearTvShowCollection();
+  await disconnect();
+  return deletedCount;
 };

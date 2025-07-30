@@ -31,9 +31,9 @@ export async function insertTvShow(results) {
 
 export async function clearTvShowCollection() {
   try {
-    const result = await collection.deleteMany({});
-    console.log(`총 ${result.deletedCount}개의 문서를 삭제했습니다.`);
-    return result.deletedCount;
+    const { deletedCount } = await collection.deleteMany({});
+    console.log(`총 ${deletedCount}개의 문서를 삭제했습니다.`);
+    return deletedCount;
   } catch (e) {
     console.log(e);
   }
