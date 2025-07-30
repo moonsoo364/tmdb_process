@@ -12,7 +12,7 @@ export const fetchTv = async () => {
         'first_air_date.lte': '2025-07-28'
       }
     });
-    console.log(res.data.results);
+    // console.log(res.data.results);
     return res.data;
   } catch (e) {
     console.log(e);

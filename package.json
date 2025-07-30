@@ -1,19 +1,20 @@
 {
   "name": "tmdb_process",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
-    "serve": "npm run format --silent && node index.js",
-    "start": "node index.js"
+    "serve": "npm run format --silent && node app.js",
+    "start": "node app.js"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "axios": "^1.4.0",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "mongodb": "^5.6.0"
+    "mongodb": "^5.6.0",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
