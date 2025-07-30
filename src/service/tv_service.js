@@ -6,10 +6,16 @@ import {
   insertTvShow
 } from '../database/tv_crud.js';
 
-export const searchTvShows = async () => {
+export const insertTvShows = async () => {
   const { results } = await fetchTv();
   await connectToDB();
-  await insertTvShow(results);
+  const { count, total } = await insertTvShow(results);
+  await disconnect();
+  return { count, total };
+};
+
+export const deleteAllTvShows = async () => {
+  await connectToDB();
   await clearTvShowCollection();
   disconnect();
 };

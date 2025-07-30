@@ -21,8 +21,9 @@ export async function insertTvShow(results) {
     const result = await collection.insertMany(results);
     console.log(`${result.insertedCount}개의 TV 쇼가 삽입되었습니다.`);
 
-    const count = await collection.countDocuments();
-    console.log(`총 ${count}개의 문서가 존재합니다.`);
+    const total = await collection.countDocuments();
+    console.log(`총 ${total}개의 문서가 존재합니다.`);
+    return { count: result.insertedCount, total };
   } catch (error) {
     console.error('MongoDB 삽입 중 오류:', error);
   }
@@ -32,6 +33,7 @@ export async function clearTvShowCollection() {
   try {
     const result = await collection.deleteMany({});
     console.log(`총 ${result.deletedCount}개의 문서를 삭제했습니다.`);
+    return result.deletedCount;
   } catch (e) {
     console.log(e);
   }
