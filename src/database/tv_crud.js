@@ -4,6 +4,7 @@ import { MONGODB_URI } from '../config/index.js';
 let client = null;
 let collection = null;
 
+// deprecated, mongoose를 사용할 예정
 export async function connectToDB() {
   const uri = MONGODB_URI;
   if (!uri) {
