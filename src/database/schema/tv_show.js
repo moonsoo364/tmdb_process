@@ -3,15 +3,8 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const tvShowSchema = new Schema({
-  _id: {
-    type: Number,
-    required: true,
-    unique: true
-  },
-  adult: {
-    type: Boolean,
-    required: true
-  },
+  _id: { type: Number, required: true, unique: true },
+  adult: { type: Boolean, required: true },
   backdrop_path: String,
   genre_ids: [Number],
   origin_country: [String],
@@ -26,4 +19,5 @@ const tvShowSchema = new Schema({
   vote_count: Number
 });
 
-export default mongoose.model('tv_show', tvShowSchema, 'tv_show');
+// 세 번째 인자로 'tv_show' 지정 → 컬렉션명 고정
+export default mongoose.model('TvShow', tvShowSchema, 'tv_show');
