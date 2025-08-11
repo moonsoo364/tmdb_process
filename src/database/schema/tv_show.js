@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const tvShowSchema = new Schema({
-  _id: { type: Number, required: true, unique: true },
+  _id: { type: Number, required: true },
   adult: { type: Boolean, required: true },
   backdrop_path: String,
   genre_ids: [Number],
