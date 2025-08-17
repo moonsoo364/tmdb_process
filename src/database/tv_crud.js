@@ -1,15 +1,19 @@
 import TvShow from './schema/tv_show.js';
 
-export const addTvShow = async data => {
+export const insertTvShows = async dataList => {
+  return await TvShow.insertMany(dataList);
+};
+
+export const insertTvShow = async data => {
   const tvShow = new TvShow(data);
   return await tvShow.save();
 };
 
-export const getAllTvShow = async () => {
+export const selectAllTvShow = async () => {
   return await TvShow.find({});
 };
 
-export const getTvShowById = async id => {
+export const selectTvShowById = async id => {
   return await TvShow.findById(id);
 };
 

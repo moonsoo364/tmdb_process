@@ -1,16 +1,16 @@
 import express from 'express';
-import { deleteTvShow, showAllTvshows } from '../service/tv_service.js';
+import { delTvShow, selAllTvshows } from '../service/tv_service.js';
 
 const router = express.Router();
 
 router.get('/tv-shows', async (req, res) => {
-  const results = await showAllTvshows();
+  const results = await selAllTvshows();
   res.success({ results });
 });
 
 router.delete('/tv-shows/:id', async (req, res) => {
   const id = req.params.id;
-  const result = await deleteTvShow(id);
+  const result = await delTvShow(id);
   res.success({ result }, `TV SHOW가 삭제되었습니다.`);
 });
 
