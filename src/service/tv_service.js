@@ -10,15 +10,15 @@ import transformId from './mongo_service.js';
 
 export const insTvShows = async dataList => {
   const result = await insertTvShows(dataList);
-  return { result };
+  return result;
 };
 
 export const selAllTvshows = async () => {
   const results = await selectAllTvShow();
-  return { results };
+  return results;
 };
 
 export const delTvShow = async id => {
   const result = await deleteTvShow(id);
-  return { result };
+  return result;
 };

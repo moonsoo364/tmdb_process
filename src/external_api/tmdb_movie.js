@@ -1,6 +1,6 @@
 import tmdb from './axios.js';
 export const movie = 'movie show';
-const fetchMovie = async () => {
+export const fetchMovie = async () => {
   const res = await tmdb.get('discover/tv', {
     params: {
       with_keywords: 180547,
