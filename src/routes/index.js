@@ -1,6 +1,6 @@
 import express from 'express';
 import tvRouter from './tv_router.js';
-import externMovieRouter from './movie.router.js';
+import externMovieRouter from './movie_router.js';
 
 const router = express.Router();
 
